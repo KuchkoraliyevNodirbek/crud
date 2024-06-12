@@ -1,0 +1,149 @@
+/* Umumiy uslublar */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Form uslublari */
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+.form-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+.form-container button:hover {
+  background-color: #218838;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Elementlar konteyneri */
+#itemsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Har bir element uchun uslublar */
+.item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.item:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.item h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.item p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.item button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item button:hover {
+  background-color: #c82333;
+}
+
+.item button[data-edit] {
+  background-color: #007bff;
+}
+
+.item button[data-edit]:hover {
+  background-color: #0056b3;
+}
+
+#itemName,
+#itemDescription,
+#createItem {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+#itemName:focus,
+#itemDescription:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#createItem {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+#createItem:hover {
+  background-color: #218838;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
