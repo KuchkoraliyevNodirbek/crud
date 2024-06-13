@@ -88,13 +88,17 @@ document.addEventListener('DOMContentLoaded', getItems);
 
 // Yaratish tugmasi bosilganda
 document.getElementById('createItem').addEventListener('click', async () => {
-    const itemTitle = document.getElementById('itemTitle').value;
+    const itemName = document.getElementById('itemName').value;
     const itemDescription = document.getElementById('itemDescription').value;
-    const newItem = { title: itemTitle, description: itemDescription };
-    await createItem(newItem);
-    await getItems(); // Yaratishdan keyin elementlarni qayta yuklash
-    document.getElementById('itemTitle').value = ''; // Input maydonlarini bo'shatish
-    document.getElementById('itemDescription').value = ''; // Input maydonlarini bo'shatish
+    if (itemName && itemDescription) { // Ikkala input ham to'ldirilganligini tekshirish
+        const newItem = { title: itemName, description: itemDescription };
+        await createItem(newItem);
+        await getItems(); // Yaratishdan keyin elementlarni qayta yuklash
+        document.getElementById('itemName').value = ''; // Input maydonlarini bo'shatish
+        document.getElementById('itemDescription').value = ''; // Input maydonlarini bo'shatish
+    } else {
+        alert("Iltimos, barcha maydonlarni to'ldiring");
+    }
 });
 
 // Elementlarni o'chirish va tahrirlash uchun event delegation
@@ -107,13 +111,12 @@ document.getElementById('itemsContainer').addEventListener('click', async (e) =>
 
     const editId = e.target.dataset.edit;
     if (editId) {
-        const itemTitle = prompt("Yangi nomni kiriting:");
+        const itemName = prompt("Yangi nomni kiriting:");
         const itemDescription = prompt("Yangi ta'rifni kiriting:");
-        if (itemTitle !== null && itemDescription !== null) {
-            const updatedItem = { title: itemTitle, description: itemDescription };
+        if (itemName !== null && itemDescription !== null) {
+            const updatedItem = { title: itemName, description: itemDescription };
             await updateItem(editId, updatedItem);
             await getItems(); // Tahrirdan keyin elementlarni qayta yuklash
         }
     }
 });
-x
